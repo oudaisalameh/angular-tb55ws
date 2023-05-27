@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Prediction } from '../shared/ prediction.model';
+import { Prediction } from '../shared/prediction.model';
 import { environment } from '../../environments/environment';
 
 @Injectable({

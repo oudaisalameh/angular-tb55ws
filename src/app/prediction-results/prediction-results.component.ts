@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ImageService } from '../shared/image.service';
-import { Prediction } from '../shared/ prediction.model';
+import { Prediction } from '../shared/prediction.model';
 
 @Component({
   selector: 'app-prediction-results',
