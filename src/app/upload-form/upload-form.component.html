@@ -1,0 +1,34 @@
+<div class="form-container">
+  <form (submit)="onSubmit()">
+    <div>
+      <button type="button" (click)="uploadImage()">Upload Image</button>
+      <input
+        type="file"
+        id="image"
+        accept=".jpg,.jpeg,.png"
+        style="display: none"
+        (change)="onFileSelected($event)"
+      />
+    </div>
+    <button type="submit" [disabled]="!selectedFile">Predict</button>
+  </form>
+
+  <!-- Display preprocessing message -->
+  <div *ngIf="preprocessingMessage" class="preprocessing-message">
+    {{ preprocessingMessage }}
+  </div>
+
+  <!-- Display top predictions -->
+  <div *ngIf="topPredictions.length > 0" class="predictions">
+    <h3>Top Predictions:</h3>
+    <ul>
+      <div *ngFor="let prediction of topPredictions">
+        <div>
+          <p>{{ prediction.diseaseName }}</p>
+          <p>Accuracy: {{ prediction.accuracy }}</p>
+          <img [src]="prediction.imageSrc" alt="Prediction Image" />
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
